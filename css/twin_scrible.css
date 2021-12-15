@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height:1.15;
+    -webkit-text-size-adjust:100%;
+}
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing : 0.5px;
+
+    background-repeat: no-repeat;
+	background-size: cover;
+    background-size: 100%;
+    background-color: black;
+}
+body::-webkit-scrollbar {
+    width: 15px;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  body::-webkit-scrollbar-track {
+    background-color: rgb(0, 0, 0);
+  }
+.main_scrible{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background-attachment: fixed;
+    background-image: url('../img/twin_scrible/twin_scrible_main.png');
+}
+.main_scrible h1 strong{
+    border-bottom: 7px solid white;
+    font-size: 5rem;
+    line-height: 7rem;
+    font-weight: 900;
+}
+.main_scrible h1{
+    opacity: 0;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.534);
+    text-shadow: 4px 5px 2px rgb(158, 158, 158);
+    animation: scrible 1.2s ease forwards;
+    animation-delay: 0.5s;
+}
+.twin{
+    margin-top: 9rem;
+    text-align: center;
+}
+.twin h2{
+    opacity: 0;
+    color: rgba(255, 255, 255, 0.795);
+    font-weight: 600;
+    font-size: 2rem;
+}
+.twin h1{
+    opacity: 0;
+    margin-top: 1.3rem;
+    margin-bottom: 2rem;
+    color: white;
+    font-weight: 800;
+    font-size: 3.6rem;
+
+}
+.twin p strong{
+    margin-top: 3rem;
+    font-size: 1.7rem;
+    line-height: 5rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.842);
+}
+.twin p {
+    opacity: 0;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.726);
+}
+.twin img{
+    opacity: 0;
+    width: 100%;
+}
+
+.works h1{
+    margin-top: 15rem;
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+#container_various{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    height: 750px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+}
+#container_countries{
+    margin-top: 100px;
+    height: 830px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgb(0, 255, 98);
+}
+#thumbs_various, #thumbs_countries{
+    position: absolute;
+    white-space: nowrap;
+}
+#thumbs_various div, #thumbs_countries div
+{
+  margin: 50px;
+  display: inline-block;
+  text-align: center;
+  font-size:3em;
+  font-weight: bold;
+  color: #FFF;
+}
+
+@-webkit-keyframes scrible {
+    0% {
+        opacity: 0;
+    }
+    25%{
+        -webkit-transform: scale(1.2)rotate(10deg);
+    }
+    55%{
+        -webkit-transform: rotate(-10deg);
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+}

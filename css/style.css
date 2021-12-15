@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Righteous&display=swap');
+
+/* 초기화 */
+body, h1, h2, h3, h4, h5, h6,  ol, dl, p, ul, li, a{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+.blind{
+    display:none!important;
+    visibility:hidden!important;
+    position:absolute;
+    margin:0;
+    padding:0;
+    pointer-events:none
+}
+body::-webkit-scrollbar {
+    width: 15px;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+  }
+  body::-webkit-scrollbar-track {
+    background-color: rgb(255, 255, 255);
+  }
+
+
+/* Hamburger button - span 4개를 활용해 클릭시 햄버거 버튼 -> x 버튼으로 변화*/
+.ham_btn a{
+
+    position: fixed;
+}
+.btn-menu{
+    position:absolute;
+    z-index: 1;
+    top: -20px;
+    left: -16px;
+    width: 75px;
+	height: 75px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.151);
+    border-radius: 50%;
+    cursor:pointer;
+}
+.hamburger-button {
+	position: absolute;
+	transition: .3s ease-in-out;
+	width: 45px;
+	height: 34px;
+	display: block;
+	top: 2rem;
+	right: 2rem;
+	z-index: 100;
+}
+
+	.hamburger-button span {
+        margin-top: -7px;
+        z-index: 2;
+		position: absolute;
+		width: 100%;
+		top: 0;
+		transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+	}
+
+		.hamburger-button span:nth-child(1) {
+			top: 0px;
+		}
+        /* spna 2,3번째 겹치게*/
+		.hamburger-button span:nth-child(2),
+		.hamburger-button span:nth-child(3) { 
+			top: 13px;
+		}
+
+		.hamburger-button span:nth-child(4) {
+			top: 26px;
+		}
+		.hamburger-button.active span:nth-child(1),
+		.hamburger-button.active span:nth-child(4) {
+			opacity: 0;
+		}
+        /* spna 2,3 rotate를 활용해 x버튼으로 만듬*/
+		.hamburger-button.active span:nth-child(2) {
+			transform: rotate(45deg);
+		}
+
+		.hamburger-button.active span:nth-child(3) {
+			transform: rotate(-45deg);
+		}
+
+/* menu */
+.overlay{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.767);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    z-index: 3;
+}
+nav.menu ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav.menu ul li{
+    margin: 6.5rem 0;
+    opacity: 0;
+    text-align: center;
+}
+nav.menu ul li a{
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size:3.667rem;
+    font-weight:800;
+    line-height:4rem;
+    transition: all 0.4s ease;
+}
+nav ul li a:hover{
+    color: white;
+    cursor: pointer;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2), 0px 2px 10px rgba(255, 255, 255, 0.1), 0px -2px 10px rgba(255, 255, 255, 0.1), -2px 0px 10px rgba(255, 255, 255, 0.05), 2px 0px 10px rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+    font-size:4.767rem;
+    font-weight:800;
+    line-height:5.4rem;
+}
+
+@keyframes fadeInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-45%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.overlay.visible{
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+    animation: fadeleftmenu 0.5s ease forwards;
+}
+
+
+.overlay.visible nav ul li{
+    animation: fadeInLeft 0.5s ease forwards;
+}
+.overlay.visible nav ul li:nth-child(1){
+    animation-delay: 0.3s;
+}
+.overlay.visible nav ul li:nth-child(2){
+    animation-delay: 0.45s;
+}
+.overlay.visible nav ul li:nth-child(3){
+    animation-delay: 0.6s;
+}
+.overlay.visible nav ul li:nth-child(4){
+    animation-delay: 0.75s;
+}
+
+
+
+.animate_inright{
+    -webkit-animation:inRight 0.6s forwards ease-in;
+    -moz-animation: inRight 0.6s forwards ease-in;
+    -ms-animation: inRight 0.6s forwards ease-in;
+    -o-animation:inRight 0.6s forwards ease-in;
+    animation: inRight 0.6s forwards ease-in;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    
+    -webkit-animation-play-state: running;
+    -moz-animation-play-state: running;
+    -ms-animation-play-state: running;
+    -o-animation-play-state: running;
+    animation-play-state: running;
+}
+.animate_inleft{
+    -webkit-animation:inLeft 0.6s forwards ease-in;
+    -moz-animation: inLeft 0.6s forwards ease-in;
+    -ms-animation: inLeft 0.6s forwards ease-in;
+    -o-animation:inLeft 0.6s forwards ease-in;
+    animation:  inLeft 0.6s forwards ease-in;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    
+    -webkit-animation-play-state: running;
+    -moz-animation-play-state: running;
+    -ms-animation-play-state: running;
+    -o-animation-play-state: running;
+    animation-play-state: running;
+}
+.animate_fadein{
+    -webkit-animation: fadein 0.6s forwards ease-in;
+    -moz-animation: fadein 0.6s forwards ease-in;
+    -ms-animation: fadein 0.6s forwards ease-in;
+    -o-animation: fadein 0.6s forwards ease-in;
+    animation: fadein 0.6s forwards ease-in;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    
+    -webkit-animation-play-state: running;
+    -moz-animation-play-state: running;
+    -ms-animation-play-state: running;
+    -o-animation-play-state: running;
+    animation-play-state: running;
+}
+.animate_fadeinup{
+    -webkit-animation: fadeInUp 0.6s forwards ease-in;
+    -moz-animation: fadeInUp 0.6s forwards ease-in;
+    -ms-animation: fadeInUp 0.6s forwards ease-in;
+    -o-animation: fadeInUp 0.6s forwards ease-in;
+    animation: fadeInUp 0.6s forwards ease-in;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    
+    -webkit-animation-play-state: running;
+    -moz-animation-play-state: running;
+    -ms-animation-play-state: running;
+    -o-animation-play-state: running;
+    animation-play-state: running;
+}
+
+@-webkit-keyframes inRight {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(100px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+@-webkit-keyframes inLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+    }	100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+
+.inner_footer{
+    width: 80%;
+    margin: auto;
+}
+footer {
+    margin-top: 100px;
+    height: 120px;
+    padding-top: 50px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background-image: url("../img/footer.png");
+
+}
+footer h2 a {
+    float: left;
+    color: rgba(255, 255, 255, 0.904);
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+footer h2 a:hover {
+    color: rgba(255, 255, 255, 0.438);
+}
+footer p {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.61);
+}
+footer #sns {
+    float: right;
+    margin-top: -5px;
+
+}
+footer #sns li {
+    display: inline-block;
+    background-image: url("../img/icon/sns_icon.png");
+    margin-left: 5px;
+}
+footer #sns li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+}
+footer #sns li:hover {
+    background-position-y: -30px;
+    transition: all 0.4s ease;
+}
+footer #sns li:nth-of-type(2) {
+    background-position-x: -30px;
+}
+footer #sns li:nth-of-type(3) {
+    background-position-x: -60px;
+}

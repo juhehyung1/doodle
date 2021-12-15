@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+/* 초기화 */
+body, h1, h2, h3, h4, h5, h6,  ol, dl, p, ul, li, a{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing : 0.5px;
+    background-image: url('../img/about/about_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow-x: hidden;
+}
+
+.about_main .whois img{
+    display: block;
+     margin: 60px auto;
+     height: 28%;
+     width: 28%;
+}
+.about_main .doodle img{
+    display: block;
+    width: 40.7%;
+    margin: 134px auto;
+    cursor: pointer;
+    filter :brightness(0) invert(0);
+    transition: 0.5s;
+}
+.about_main .doodle img:hover{
+    filter: none;
+}
+#inner{
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+}
+.sns_star{
+    margin-top: -80px;
+    display: flex;
+}
+.sns_star h1{
+    font-family: 'Nunito Sans', sans-serif;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    opacity: 0;
+}
+.sns_star p{
+    opacity: 0;
+    margin: auto 300px; 
+    font-size: 1.6rem;
+    line-height: 3.3rem;
+    font-weight: 500;
+}
+.sns_star p strong{
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.color{
+    margin-top: -50px;
+    display: flex;
+}
+.color h1{
+    opacity: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.color p{
+    opacity: 0;
+    margin: auto; 
+    margin-left: 600px;
+    font-size: 1.6rem;
+    line-height: 3.3rem;
+    font-weight: 500;
+    text-align: right;
+}
+.color strong{
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.saying{
+    margin-top: 100px;
+    width: 100%;
+    height: 500px;
+    background-image: url("../img/about/saying_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.saying h1{
+    color: white;
+    display: block;
+    margin: auto;
+    padding-top: 200px;
+    text-align: center;
+    font-size: 2.6rem;
+    line-height: 3.5rem;
+    font-weight: 800;
+    text-shadow: 1px 1px 6px rgb(0, 0, 0);
+}
+.saying p{
+    color: rgb(231, 231, 231);
+    display: block;
+    margin: auto;
+    padding-top: 60px;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 6px rgb(0, 0, 0);
+}
+
+.letssee{
+    margin-top:250px;
+    margin-bottom: 100px;
+}
+
+.about_slidewrapper {
+  margin-left: -10px;
+  bottom: 0;
+  width: 100%;
+  padding-top: 20px;
+  height: 50px;
+  overflow: hidden;
+  margin-bottom: 150px;
+}
+.about_slidemove {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 10000px;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+}
+.about_slideitem {
+  font-weight: 800;
+  font-size: 60px;
+  font-style: italic;
+  color: transparent;
+  -webkit-text-stroke-width: 5px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  margin: 0;
+}
+
+.letssee h1, .letssee h2{
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 1.9rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+}
+#container_various{
+    margin-top: 100px;
+    height: 480px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#container_countries{
+    margin-top: 100px;
+    height: 830px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#thumbs_various, #thumbs_countries{
+    position: absolute;
+    white-space: nowrap;
+}
+#thumbs_various div, #thumbs_countries div
+{
+  margin: 0 50px;
+  display: inline-block;
+  text-align: center;
+  font-size:3em;
+  font-weight: bold;
+  color: #FFF;
+}
+
+.letssee h2{
+    margin-top: 200px;
+}
